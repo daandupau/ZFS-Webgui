@@ -10,11 +10,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 else
 
-
-
-echo updating packages first
-yum update -y
-
 echo "copy in the latest zfs epel release"
 echo "For latest release: https://github.com/zfsonlinux/zfs/wiki/RHEL-and-CentOS"
 read zfs
@@ -27,4 +22,10 @@ echo switching from dkms to kABI-tracking kmod
 sed -i '4s/.*/enabled=1/' $zfsrepo
 sed -i '12s/.*/enabled=0/' $zfsrepo
 
+echo loading zfs-packages
+yum update -y
+
+yum install zfs -y
+
+echo zfs installed
 fi
