@@ -1,0 +1,22 @@
+{
+    "name": "daandupau/zfs-webgui",
+    "authors": [
+        {
+            "name": "daandupau",
+            "email": "dw.dupau@gmail.com"
+        },
+        {
+            "name": "Patrick 'Quezler' Mounier",
+            "email": "patrick@queztech.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^4.0",
+        "symfony/var-dumper": "^4.0"
+    }
+}
