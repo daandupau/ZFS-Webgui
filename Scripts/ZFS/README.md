@@ -2,15 +2,15 @@ Arguments
 
 `zfs-create.sh <disk-size> <zpool>/<zvol-name>`
 
-`disk-size = number{K,M,G,T,P,Z}
-`zpool = value (storage-name)`
-`zvol = value (zfs volume name)`
+disk-size = number{K,M,G,T,P,Z}
+zpool = value (storage-name)
+zvol = value (zfs volume name)
 
 
 `zfs-destroy.sh <zpool/zvol-name>`
 
-`zpool = value (storage-name)`
-`zvol = value (zfs volume name)`
+zpool = value (storage-name)
+zvol = value (zfs volume name)
 
 
 `zpool-create.sh <poolname> <type> <disks>`
