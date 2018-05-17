@@ -9,7 +9,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 else
 
-$scripts\base-packages.sh
 $scripts\zfs-epel.sh
   
  fi

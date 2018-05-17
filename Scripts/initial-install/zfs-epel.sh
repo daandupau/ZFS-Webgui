@@ -1,7 +1,7 @@
 #!/bin/bash
 ####################################################
 zfsrepo=/etc/yum.repos.d/zfs.repo
-OUTPUT="tmp/input.txt"
+OUTPUT="input.txt"
 
 ####################################################
 
