@@ -1,6 +1,6 @@
 #!/bin/bash
 ####################################################
-zfs-repo=/etc/yum.repos.d/zfs.repo
+zfsrepo=/etc/yum.repos.d/zfs.repo
 
 
 ####################################################
@@ -24,7 +24,7 @@ gpg --quiet --with-fingerprint /etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
 echo zfs-release packages installed
 
 echo switching from dkms to kABI-tracking kmod
-sed -i '4s/.*/enabled=1/' $zfs-repo
-sed -i '12s/.*/enabled=0/' $zfs-repo
+sed -i '4s/.*/enabled=1/' $zfsrepo
+sed -i '12s/.*/enabled=0/' $zfsrepo
 
 fi
