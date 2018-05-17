@@ -5,11 +5,6 @@ zfsrepo=/etc/yum.repos.d/zfs.repo
 
 ####################################################
 
-if [[ $EUID -ne 0 ]]; then
-  echo "You must be a root user" 2>&1
-  exit 1
-else
-
 echo "copy in the latest zfs epel release"
 echo "For latest release: https://github.com/zfsonlinux/zfs/wiki/RHEL-and-CentOS"
 read zfs
@@ -26,6 +21,4 @@ echo loading zfs-packages
 yum update -y
 
 yum install zfs -y
-
-echo zfs installed
-fi
+exit
