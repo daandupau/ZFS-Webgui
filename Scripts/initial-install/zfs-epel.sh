@@ -2,7 +2,6 @@
 ####################################################
 zfsrepo=/etc/yum.repos.d/zfs.repo
 
-
 ####################################################
 
 echo "copy in the latest zfs epel release"
