@@ -1,0 +1,14 @@
+{
+    "name": "daandupau/zfs-webgui",
+    "authors": [
+        {
+            "name": "daandupau",
+            "email": "dw.dupau@gmail.com"
+        },
+        {
+            "name": "Patrick 'Quezler' Mounier",
+            "email": "patrick@queztech.net"
+        }
+    ],
+    "require": {}
+}
