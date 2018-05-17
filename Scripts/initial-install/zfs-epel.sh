@@ -1,12 +1,29 @@
 #!/bin/bash
 ####################################################
 zfsrepo=/etc/yum.repos.d/zfs.repo
+OUTPUT="tmp/input.txt"
 
 ####################################################
 
-echo "copy in the latest zfs epel release"
-echo "For latest release: https://github.com/zfsonlinux/zfs/wiki/RHEL-and-CentOS"
-read zfs
+# dialog for epel release
+>$OUTPUT
+trap "rm $OUTPUT; exit" SIGHUP SIGINT SIGTERM
+
+dialog --title "zfs-epel" \
+--input-box "For latest release: https://github.com/zfsonlinux/zfs/wiki/RHEL-and-CentOS" 10 150 2>$OUTPUT
+respose=$?
+
+ZFSURL=$(<$OUTPUT)
+case $respose in
+  0) 
+  	zfs=${ZFSURL}
+  	;;
+  1) 
+  	echo "Cancel pressed." 
+  	;;
+  255) 
+   echo "[ESC] key pressed."
+esac
 
 yum install $zfs -y
 gpg --quiet --with-fingerprint /etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
@@ -20,4 +37,6 @@ echo loading zfs-packages
 yum update -y
 
 yum install zfs -y
+rm $OUTPUT
+
 exit
