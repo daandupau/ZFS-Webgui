@@ -1,6 +1,6 @@
 Arguments
 
-zfs-create.sh <disk-size> <zpool>/<zvol-name>
+zfs-create.sh <disk-size> <zpool>/<zvol-name>  
 disk-size = number{K,M,G,T,P,Z}
 zpool = value (storage-name)
 zvol = value (zfs volume name)
