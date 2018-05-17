@@ -16,6 +16,5 @@ echo loading zfs-packages
 yum update -y
 
 yum install zfs -y
-rm $OUTPUT
 
 exit
